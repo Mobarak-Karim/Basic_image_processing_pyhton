@@ -2,36 +2,70 @@
 
 **Author: Md. Mobarak Karim, Ph.D.**
 
-A compact, hands-on introduction to image processing in Python using **NumPy**, **Matplotlib**, **scikit-image**, **pandas**, and **imageio**. The course is written for beginners who want to move quickly from "I can open an image" to a small, reproducible analysis pipeline.
+A beginner-friendly course for learning **Python and image processing together**, from basic programming syntax to a complete image-analysis workflow.
 
-The emphasis is practical: inspect the data first, make one processing decision at a time, visualize intermediate results, and measure only after validating the segmentation.
+You do **not** need previous Python experience. The course starts with variables, data types, logic, loops, functions, imports, debugging, and NumPy before moving into image processing.
 
-## What makes this version different
+The main libraries are **NumPy**, **Matplotlib**, **scikit-image**, **pandas**, and **imageio**.
 
-- A new, original course structure and examples rather than a copy of the upstream notebooks.
-- Smaller, self-contained notebooks with more comments and short exercises.
-- Different example images from `skimage.data` plus a synthetic two-channel fluorescence image generated in code.
-- A complete learning path from NumPy basics to batch processing.
-- Biomedical-imaging habits are introduced without turning the course into an advanced microscopy class.
-- No large external image folder is required for the core lessons.
+## Learning philosophy
+
+This course is designed around understanding, not copying code.
+
+For each important operation, ask:
+
+1. **What problem am I trying to solve?**
+2. **Why is this function appropriate?**
+3. **Which parameter controls its behavior?**
+4. **What should I inspect afterward?**
+
+The core workflow is:
+
+```text
+question → understand data → choose method → inspect result → validate → measure → save
+```
 
 ## Learning mind map
 
 ```mermaid
 mindmap
   root((Python image processing))
-    Foundations
-      Python environment
-      NumPy arrays
-      Indexing and masks
-    Image understanding
-      Shape and channels
+    Python foundations
+      Variables
       Data types
-      Read and save
-    Preprocessing
+      Strings
+      Lists tuples dictionaries
+      Comparisons
+      Boolean logic
+      if elif else
+      for loops
+      while loops
+      Functions
+        Calling functions
+        Parameters
+        Arguments
+        return
+      Imports
+      Debugging
+    NumPy foundations
+      Arrays
+      Shape
+      Dtype
+      Indexing
+      Slicing
+      Statistics
+      Boolean masks
+      Vectorization
+    Images
+      Grayscale
+      RGB
+      Channels
+      Intensity range
       Histograms
+    Preprocessing
       Contrast
-      Noise filtering
+      Gaussian filtering
+      Median filtering
       Edge detection
     Segmentation
       Thresholding
@@ -39,37 +73,66 @@ mindmap
       Labels
       Watershed when needed
     Quantification
-      Region measurements
+      Region properties
       pandas tables
+      Physical units
       Validation
-    Reproducible workflow
+    Reproducibility
       Functions
       Batch processing
-      Save outputs
-      Final project
+      Save parameters
+      Save results
 ```
-
-If the mind map does not render in a local Markdown viewer, open the README on GitHub, which supports Mermaid diagrams in Markdown.
 
 ## Course order
 
-| Notebook | Topic | Main result |
+| Notebook | Topic | What you learn |
 |---|---|---|
-| `00` | Setup and workflow | A working environment and analysis habit |
-| `01` | Python + NumPy | Crops, masks, statistics, array thinking |
-| `02` | Read/display/types | Correct handling of dtype, range, RGB/grayscale |
-| `03` | Histograms + contrast | Intensity inspection and display enhancement |
-| `04` | Filtering + edges | Noise reduction and edge maps |
-| `05` | Thresholding + morphology | Clean binary masks |
-| `06` | Segmentation + labels | Individual labeled objects |
-| `07` | Measurements | pandas-ready region tables |
-| `08` | Color + multichannel | Channel-aware analysis and synthetic fluorescence |
-| `09` | Batch pipeline | One reusable analysis function across images |
-| `10` | Final project | End-to-end segmentation and measurement |
+| [`00_setup_and_workflow.ipynb`](00_setup_and_workflow.ipynb) | Setup + workflow | Environment, Jupyter, analysis habits, overall image-processing logic |
+| [`01_python_numpy_for_images.ipynb`](01_python_numpy_for_images.ipynb) | **Python fundamentals + NumPy** | Variables, types, lists, dictionaries, `if/else`, Boolean logic, loops, function calls, writing functions, imports, errors/debugging, arrays, slicing, masks |
+| [`02_read_display_and_image_types.ipynb`](02_read_display_and_image_types.ipynb) | Read/display/types | Grayscale/RGB, dtype, intensity ranges, safe image I/O |
+| [`03_contrast_histograms_and_intensity.ipynb`](03_contrast_histograms_and_intensity.ipynb) | Histograms + contrast | Intensity distributions, percentiles, display vs data modification |
+| [`04_filtering_noise_and_edges.ipynb`](04_filtering_noise_and_edges.ipynb) | Filtering + edges | Gaussian vs median filtering, noise, Sobel edges, parameter trade-offs |
+| [`05_thresholding_and_morphology.ipynb`](05_thresholding_and_morphology.ipynb) | Thresholding + morphology | Global/local thresholds, binary masks, cleanup |
+| [`06_segmentation_and_labels.ipynb`](06_segmentation_and_labels.ipynb) | Segmentation + labels | Connected components, overlays, watershed when needed |
+| [`07_measurements_and_tables.ipynb`](07_measurements_and_tables.ipynb) | Measurements | `regionprops_table`, pandas, object statistics, physical units |
+| [`08_color_and_multichannel_images.ipynb`](08_color_and_multichannel_images.ipynb) | Color + multichannel | RGB vs scientific channels, channel-specific analysis |
+| [`09_batch_processing_pipeline.ipynb`](09_batch_processing_pipeline.ipynb) | Batch pipeline | Reusable functions, explicit parameters, multiple images |
+| [`10_final_project.ipynb`](10_final_project.ipynb) | Final project | End-to-end segmentation, validation, measurement, saving results |
+
+## What Notebook 01 now covers
+
+Notebook `01_python_numpy_for_images.ipynb` is the programming foundation of the course. It now explains:
+
+- what a variable is,
+- `int`, `float`, `str`, and `bool`,
+- arithmetic and comparison operators,
+- strings and f-strings,
+- lists, tuples, and dictionaries,
+- indexing and slicing,
+- `if`, `elif`, `else`,
+- `and`, `or`, `not`,
+- `for` loops,
+- `range()` and `enumerate()`,
+- `while` loops,
+- what it means to **call a function**,
+- positional vs keyword arguments,
+- how to define a function with `def`,
+- parameters vs arguments,
+- how `return` works,
+- imports and dot notation,
+- common Python errors and debugging,
+- NumPy arrays,
+- `[row, column]` indexing,
+- vectorized operations,
+- Boolean image masks,
+- applying all of those ideas to a real image.
+
+The notebook has extensive explanatory comments and connects every Python concept to a practical image-processing use.
 
 ## Installation
 
-### Option A — Miniforge / conda (recommended for scientific Python)
+### Option A — Miniforge / conda
 
 ```bash
 conda env create -f environment.yml
@@ -77,72 +140,93 @@ conda activate pyimage-beginner
 jupyter lab
 ```
 
-### Option B — pip
+### Option B — `venv` + pip
 
 ```bash
 python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
+
+# Windows
+.venv\Scripts\activate
+
+# macOS / Linux
+source .venv/bin/activate
+
 python -m pip install -r requirements.txt
 jupyter lab
 ```
 
-## How to use the course
+## How to study the notebooks
 
-Start with `notebooks/00_setup_and_workflow.ipynb` and move in numerical order. For each notebook:
+For each lesson:
 
-1. Run the example as written.
-2. Inspect the output rather than only checking whether the code ran.
-3. Change one parameter.
-4. Explain what changed and why.
-5. Complete the short exercise before moving on.
+1. Read the explanation before the code.
+2. Predict what a code cell should do.
+3. Run it.
+4. Inspect the output.
+5. Change one parameter or value.
+6. Explain what changed and why.
+7. Complete the practice section before moving on.
 
-For your own research images, place **copies** in `data/raw/`. Keep originals elsewhere and never use a teaching notebook as the only copy of experimental data.
+A learner who understands **why** a line is present will be able to adapt the code to a new image. A learner who only copies the line usually cannot.
 
-## Core workflow to remember
+## Core image-analysis workflow
 
 ```mermaid
-flowchart LR
-    A[Load] --> B[Inspect]
-    B --> C[Preprocess]
-    C --> D[Segment]
-    D --> E[Validate]
-    E --> F[Measure]
-    F --> G[Save results]
-    E -->|mask is not acceptable| C
+flowchart TD
+    A[Define the question] --> B[Load image]
+    B --> C[Inspect shape, dtype, range, channels]
+    C --> D{Need preprocessing?}
+    D -->|No| E[Segment]
+    D -->|Yes| F[Choose a method for a specific problem]
+    F --> G[Compare with original]
+    G --> E
+    E --> H[Validate mask / labels]
+    H --> I{Acceptable?}
+    I -->|No| C
+    I -->|Yes| J[Measure]
+    J --> K[Check units and distributions]
+    K --> L[Save results and parameters]
 ```
+
+## Companion guides
+
+- [`FUNCTION_GUIDE.md`](FUNCTION_GUIDE.md) — which function to try, when, why, and what parameter matters.
+- [`CHEATSHEET.md`](CHEATSHEET.md) — quick syntax reference after you understand the concept.
+- [`REFERENCES.md`](REFERENCES.md) — official documentation used to cross-check the course.
+
+## Data policy
+
+The core lessons use built-in `skimage.data` examples and synthetic image data so the repository stays lightweight and reproducible.
+
+When using your own research images:
+
+- work on copies,
+- keep raw data unchanged,
+- do not commit private or unpublished data to a public repository,
+- preserve metadata needed for quantitative interpretation.
 
 ## Scope
 
-This course intentionally stops before deep learning, registration, deconvolution, GPU acceleration, large 3-D datasets, and production software engineering. Those are important topics, but they make more sense after the workflow here is comfortable.
-
-## Data and image policy
-
-The notebooks mainly use example images provided by `skimage.data`, a curated set intended for examples and documentation, and one synthetic fluorescence image created directly with NumPy/scikit-image. No Human Protein Atlas images from the upstream beginner course are included in this rewrite.
-
-When adding your own images, document the source, license/permission, acquisition context, and any preprocessing that changes quantitative pixel values.
+This is a **beginner-to-practical** course. It intentionally stops before deep learning, registration, deconvolution, GPU acceleration, and large 3-D/4-D datasets. Those topics become easier once the fundamentals here are comfortable.
 
 ## Author
 
 **Md. Mobarak Karim, Ph.D.**  
 GitHub: [Mobarak-Karim](https://github.com/Mobarak-Karim)
 
-## Course design sources
+## Technical references
 
-The lesson order and technical recommendations were cross-checked against current official documentation:
+The course structure and function usage were cross-checked against current official documentation:
 
 1. scikit-image User Guide — https://scikit-image.org/docs/stable/user_guide/
-2. scikit-image: Getting started — https://scikit-image.org/docs/stable/user_guide/getting_started
-3. scikit-image: NumPy for images — https://scikit-image.org/docs/stable/user_guide/numpy_images.html
-4. scikit-image example gallery — https://scikit-image.org/docs/stable/auto_examples/
-5. NumPy learning resources — https://numpy.org/learn/
-6. Jupyter installation guide — https://jupyter.org/install
-7. GitHub Mermaid diagrams — https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams
-
-## Upstream note
-
-This GitHub repository originated as a fork of `guiwitz/PyImageCourse_beginner`, which inspired the idea of a short beginner image-processing course. The current course files, lesson sequence, explanatory text, and examples in this rewrite were independently written and reorganized. Historical commits may still contain upstream material under its original terms.
+2. scikit-image NumPy for Images — https://scikit-image.org/docs/stable/user_guide/numpy_images.html
+3. scikit-image Thresholding Guide — https://scikit-image.org/docs/stable/auto_examples/applications/plot_thresholding_guide.html
+4. scikit-image API — https://scikit-image.org/docs/stable/api/skimage
+5. NumPy documentation — https://numpy.org/doc/stable/
+6. Python tutorial — https://docs.python.org/3/tutorial/
+7. Matplotlib documentation — https://matplotlib.org/stable/
+8. Jupyter — https://jupyter.org/
 
 ## License
 
-New course material in this rewrite is released under the MIT License. See `LICENSE` and `NOTICE.md`.
+See `LICENSE` and `NOTICE.md`.
