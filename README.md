@@ -1,194 +1,200 @@
-# Python Image Processing: A Practical Beginner Course
+# Python + MATLAB Image Processing: A Practical Beginner Course
 
 **Author: Md. Mobarak Karim, Ph.D.**
 
-A beginner-friendly course for learning **Python and image processing together**, from zero programming knowledge to a complete image-analysis workflow.
+A beginner-friendly, self-contained course for learning **programming, scientific reasoning, and image processing** in either **Python** or **MATLAB**.
 
-You do **not** need previous Python experience. The course begins with programming concepts, scientific problem solving, and translating mathematical equations into code before moving into NumPy and image processing.
+You do **not** need previous programming experience. Both tracks begin with variables, data types, statements, logic, loops, functions, debugging, mathematical equations, units, pseudocode, and problem decomposition before moving into image processing.
 
-The main libraries are **NumPy**, **Matplotlib**, **scikit-image**, **pandas**, and **imageio**.
+## Choose your learning track
+
+### Python track
+
+Start with:
+
+1. [`00_setup_and_workflow.ipynb`](00_setup_and_workflow.ipynb)
+2. [`01_python_numpy_for_images.ipynb`](01_python_numpy_for_images.ipynb) — the complete Python prerequisite
+3. Continue through notebooks `02` to `10` in numerical order.
+
+Python uses **NumPy, Matplotlib, scikit-image, pandas, imageio, and Jupyter**.
+
+### MATLAB track
+
+Open the [`MATLAB/`](MATLAB/) folder and start with:
+
+1. [`MATLAB/00_setup_and_workflow.m`](MATLAB/00_setup_and_workflow.m)
+2. [`MATLAB/01_matlab_foundations_for_images.m`](MATLAB/01_matlab_foundations_for_images.m) — the complete MATLAB prerequisite
+3. Continue through MATLAB lessons `02` to `10` in numerical order.
+
+The MATLAB lessons use `%%` sections, which behave like notebook cells inside the MATLAB Editor. Most image-processing lessons require **Image Processing Toolbox**.
+
+For the full MATLAB roadmap, see [`MATLAB/README.md`](MATLAB/README.md).
 
 ## Learning philosophy
 
 This course is designed around understanding, not copying code.
 
+For programming and scientific equations, use this reasoning chain:
+
+```text
+question -> concept/equation -> inputs/units -> pseudocode -> code -> test -> validate -> apply
+```
+
+For image analysis, use this workflow:
+
+```text
+question -> inspect data -> preprocess only if needed -> segment -> validate -> measure -> save
+```
+
 For every important operation, ask:
 
-1. **What problem am I trying to solve?**
-2. **What are my inputs and desired output?**
-3. **What equation or logical rule describes the problem?**
-4. **How do I translate that rule into Python?**
-5. **Why is this function appropriate?**
-6. **Which parameter controls its behavior?**
-7. **How will I validate the result?**
+1. What problem am I trying to solve?
+2. What are my inputs and desired output?
+3. What mathematical equation or logical rule describes the problem?
+4. What are the units?
+5. How do I translate the rule into code?
+6. Why is this function appropriate?
+7. Which parameter controls its behavior?
+8. What could the operation damage or bias?
+9. How will I validate the result?
 
-The core programming habit is:
-
-```text
-question → concept/equation → inputs/units → pseudocode → Python → test → validate → apply
-```
-
-The core image-analysis workflow is:
-
-```text
-question → understand data → choose method → inspect result → validate → measure → save
-```
-
-## Learning mind map
+## Shared learning mind map
 
 ```mermaid
 mindmap
-  root((Python image processing))
-    Python foundations
-      Statements and expressions
+  root((Scientific image processing))
+    Programming foundations
       Variables
       Data types
-      Strings
-      Lists tuples dictionaries sets
-      Indexing and slicing
-      Comparisons
-      Boolean logic
-      if elif else
-      match case
-      for loops
-      while loops
-      range enumerate zip
+      Statements
+      Indexing
+      Logic
+      Conditions
+      Loops
       Functions
-        Calling functions
-        Parameters and arguments
-        Keyword arguments
-        return
-        Scope
-        Docstrings
-      Functions methods attributes
-      Imports and modules
-      File paths
+      Imports / paths
       Errors and debugging
     Scientific thinking
       Define question
-      Define input and output
+      Inputs and outputs
+      Equations
       Units
-      Formula to code
       Pseudocode
       Test simple cases
       Validate trends
-    NumPy foundations
-      Arrays
+    Arrays and matrices
       Shape
-      Dtype
+      Data type
       Indexing
       Slicing
       Statistics
-      Boolean masks
+      Logical masks
       Vectorization
     Images
       Grayscale
       RGB
-      Channels
+      Scientific channels
       Intensity range
       Histograms
     Preprocessing
       Contrast
       Gaussian filtering
       Median filtering
-      Edge detection
+      Edges
     Segmentation
-      Thresholding
+      Global threshold
+      Local/adaptive threshold
       Morphology
-      Labels
+      Connected objects
       Watershed when needed
     Quantification
-      Region properties
-      pandas tables
+      Area
+      Shape
+      Intensity
       Physical units
-      Validation
+      Tables
     Reproducibility
       Functions
       Batch processing
       Save parameters
       Save results
+      QC overlays
 ```
 
-## Course order
+## Python course order
 
 | Notebook | Topic | What you learn |
 |---|---|---|
-| [`00_setup_and_workflow.ipynb`](00_setup_and_workflow.ipynb) | Setup + workflow | Environment, Jupyter, analysis habits, overall image-processing logic |
-| [`01_python_numpy_for_images.ipynb`](01_python_numpy_for_images.ipynb) | **Complete Python foundation + scientific reasoning + NumPy** | Python from zero, variables, types, collections, logic, conditions, loops, functions, imports, debugging, formula-to-code reasoning, pseudocode, units, NumPy, arrays, slicing, masks, and image-array thinking |
-| [`02_read_display_and_image_types.ipynb`](02_read_display_and_image_types.ipynb) | Read/display/types | Grayscale/RGB, dtype, intensity ranges, safe image I/O |
-| [`03_contrast_histograms_and_intensity.ipynb`](03_contrast_histograms_and_intensity.ipynb) | Histograms + contrast | Intensity distributions, percentiles, display vs data modification |
-| [`04_filtering_noise_and_edges.ipynb`](04_filtering_noise_and_edges.ipynb) | Filtering + edges | Gaussian vs median filtering, noise, Sobel edges, parameter trade-offs |
-| [`05_thresholding_and_morphology.ipynb`](05_thresholding_and_morphology.ipynb) | Thresholding + morphology | Global/local thresholds, binary masks, cleanup |
-| [`06_segmentation_and_labels.ipynb`](06_segmentation_and_labels.ipynb) | Segmentation + labels | Connected components, overlays, watershed when needed |
-| [`07_measurements_and_tables.ipynb`](07_measurements_and_tables.ipynb) | Measurements | `regionprops_table`, pandas, object statistics, physical units |
-| [`08_color_and_multichannel_images.ipynb`](08_color_and_multichannel_images.ipynb) | Color + multichannel | RGB vs scientific channels, channel-specific analysis |
-| [`09_batch_processing_pipeline.ipynb`](09_batch_processing_pipeline.ipynb) | Batch pipeline | Reusable functions, explicit parameters, multiple images |
-| [`10_final_project.ipynb`](10_final_project.ipynb) | Final project | End-to-end segmentation, validation, measurement, saving results |
+| [`00_setup_and_workflow.ipynb`](00_setup_and_workflow.ipynb) | Setup + workflow | Environment, Jupyter, analysis habits |
+| [`01_python_numpy_for_images.ipynb`](01_python_numpy_for_images.ipynb) | **Python foundations + scientific reasoning + NumPy** | Variables, types, collections, logic, loops, functions, imports, debugging, equations, pseudocode, units, NumPy, arrays, masks, images |
+| [`02_read_display_and_image_types.ipynb`](02_read_display_and_image_types.ipynb) | Read/display/types | Grayscale/RGB, dtype, intensity range, safe I/O |
+| [`03_contrast_histograms_and_intensity.ipynb`](03_contrast_histograms_and_intensity.ipynb) | Histograms + contrast | Intensity distributions and contrast decisions |
+| [`04_filtering_noise_and_edges.ipynb`](04_filtering_noise_and_edges.ipynb) | Filtering + edges | Gaussian vs median, noise, edges |
+| [`05_thresholding_and_morphology.ipynb`](05_thresholding_and_morphology.ipynb) | Thresholding + morphology | Binary masks and cleanup |
+| [`06_segmentation_and_labels.ipynb`](06_segmentation_and_labels.ipynb) | Segmentation + labels | Connected components, overlays, watershed |
+| [`07_measurements_and_tables.ipynb`](07_measurements_and_tables.ipynb) | Measurements | Object properties, pandas, physical units |
+| [`08_color_and_multichannel_images.ipynb`](08_color_and_multichannel_images.ipynb) | Color + multichannel | RGB vs scientific channels |
+| [`09_batch_processing_pipeline.ipynb`](09_batch_processing_pipeline.ipynb) | Batch pipeline | Reusable functions and multiple images |
+| [`10_final_project.ipynb`](10_final_project.ipynb) | Final project | End-to-end validated analysis |
 
-## Notebook 01 is the standalone Python prerequisite
+## MATLAB course order
 
-[`01_python_numpy_for_images.ipynb`](01_python_numpy_for_images.ipynb) is intentionally much more detailed than the later notebooks. A complete beginner should be able to study it without first leaving this repository for a separate Python course.
+| Lesson | Topic | What you learn |
+|---|---|---|
+| [`MATLAB/00_setup_and_workflow.m`](MATLAB/00_setup_and_workflow.m) | Setup + workflow | MATLAB Editor, workspace, paths, reproducibility |
+| [`MATLAB/01_matlab_foundations_for_images.m`](MATLAB/01_matlab_foundations_for_images.m) | **MATLAB foundations + scientific reasoning** | Variables, matrices, indexing, element-wise math, logic, loops, functions, equations, pseudocode, debugging, images as arrays |
+| [`MATLAB/02_read_display_and_image_types.m`](MATLAB/02_read_display_and_image_types.m) | Read/display/types | `imread`, grayscale/RGB, class, display vs data |
+| [`MATLAB/03_contrast_histograms_and_intensity.m`](MATLAB/03_contrast_histograms_and_intensity.m) | Histograms + contrast | `imhist`, percentiles, `imadjust`, local enhancement |
+| [`MATLAB/04_filtering_noise_and_edges.m`](MATLAB/04_filtering_noise_and_edges.m) | Filtering + edges | `imgaussfilt`, `medfilt2`, Sobel/Canny |
+| [`MATLAB/05_thresholding_and_morphology.m`](MATLAB/05_thresholding_and_morphology.m) | Thresholding + morphology | Otsu/adaptive masks, cleanup, morphology |
+| [`MATLAB/06_segmentation_and_labels.m`](MATLAB/06_segmentation_and_labels.m) | Segmentation + labels | Connected components, overlays, watershed |
+| [`MATLAB/07_measurements_and_tables.m`](MATLAB/07_measurements_and_tables.m) | Measurements | `regionprops`, tables, calibration |
+| [`MATLAB/08_color_and_multichannel_images.m`](MATLAB/08_color_and_multichannel_images.m) | Color + multichannel | RGB vs scientific channels |
+| [`MATLAB/09_batch_processing_pipeline.m`](MATLAB/09_batch_processing_pipeline.m) | Batch pipeline | `dir`, `fullfile`, reusable functions |
+| [`MATLAB/10_final_project.m`](MATLAB/10_final_project.m) | Final project | End-to-end MATLAB analysis and sensitivity testing |
 
-It explains:
+## The foundation lessons are intentionally detailed
 
-- what Python statements and expressions are,
-- comments and indentation,
-- variables and meaningful scientific variable names,
-- `int`, `float`, `str`, `bool`, and `None`,
-- type conversion,
-- arithmetic operators and order of operations,
-- strings and f-strings,
-- lists, tuples, dictionaries, and sets,
-- zero-based indexing and slicing,
-- comparison operators,
-- `and`, `or`, and `not`,
-- `if`, `elif`, and `else`,
-- `match / case`,
-- `for` loops and `while` loops,
-- `range()`, `enumerate()`, and `zip()`,
-- `break` and `continue`,
-- list comprehensions,
-- what it means to **call a function**,
-- built-in vs library functions,
-- positional and keyword arguments,
-- how to define a function using `def`,
-- parameters vs arguments,
-- default parameters,
-- `return`,
-- returning multiple values,
-- local variables and scope,
-- docstrings,
-- imports and modules,
-- functions vs methods vs attributes,
-- file paths using `pathlib`,
-- common Python errors,
-- a practical debugging workflow,
-- `try / except`,
-- assertions,
-- how to turn a scientific question into a plain-language algorithm,
-- how to write pseudocode before Python,
-- how to translate an original mathematical formula into code,
-- how to identify formula inputs and outputs,
-- how to preserve parentheses and order of operations,
-- how to keep track of physical units,
-- how to test equations using known/simple cases,
-- how to check whether the output trend is physically reasonable,
-- example formula implementations for circle area, a linear model, exponential attenuation, Euclidean distance, min–max normalization, a Gaussian equation, and pixel-to-physical-area conversion,
-- NumPy arrays,
-- array shape and dtype,
-- `[row, column]` image indexing,
-- image cropping,
-- vectorized operations,
-- Boolean masks,
-- array statistics,
-- applying those ideas to an actual image,
-- practice problems and worked solutions.
+The two prerequisite lessons are designed so a complete beginner does not need another introductory programming course first:
 
-The main idea is not merely **how to type Python**, but **how to convert an idea, equation, or experiment into reliable code**.
+- [`01_python_numpy_for_images.ipynb`](01_python_numpy_for_images.ipynb)
+- [`MATLAB/01_matlab_foundations_for_images.m`](MATLAB/01_matlab_foundations_for_images.m)
 
-## Installation
+They teach not only syntax, but **how to conceptualize a scientific problem and turn it into reliable code**.
 
-### Option A — Miniforge / conda
+Examples include:
+
+- circle area,
+- linear equations,
+- exponential attenuation / Beer-Lambert-style models,
+- Euclidean distance,
+- normalization,
+- Gaussian equations,
+- pixel-to-physical-area conversion,
+- logical object-selection rules,
+- image masks and statistics.
+
+The emphasis is always:
+
+```text
+original formula -> identify symbols -> define units -> choose variables -> translate operators -> test a known case -> check the expected physical trend
+```
+
+## Python companion guides
+
+- [`FUNCTION_GUIDE.md`](FUNCTION_GUIDE.md) — which Python image-processing function to try and why.
+- [`CHEATSHEET.md`](CHEATSHEET.md) — Python quick syntax reference.
+- [`REFERENCES.md`](REFERENCES.md) — technical references.
+
+## MATLAB companion guides
+
+- [`MATLAB/MATLAB_FUNCTION_GUIDE.md`](MATLAB/MATLAB_FUNCTION_GUIDE.md) — which MATLAB image-processing function to try and why.
+- [`MATLAB/MATLAB_CHEATSHEET.md`](MATLAB/MATLAB_CHEATSHEET.md) — MATLAB quick syntax reference.
+- [`MATLAB/README.md`](MATLAB/README.md) — MATLAB-specific roadmap and setup notes.
+
+## Python installation
+
+### Miniforge / conda
 
 ```bash
 conda env create -f environment.yml
@@ -196,7 +202,7 @@ conda activate pyimage-beginner
 jupyter lab
 ```
 
-### Option B — `venv` + pip
+### `venv` + pip
 
 ```bash
 python -m venv .venv
@@ -211,65 +217,57 @@ python -m pip install -r requirements.txt
 jupyter lab
 ```
 
-## How to study the notebooks
+## MATLAB requirements
+
+The MATLAB language foundation requires MATLAB. Most image-processing lessons use **Image Processing Toolbox**.
+
+Inside MATLAB, check availability with:
+
+```matlab
+ver
+which imgaussfilt
+which imbinarize
+which regionprops
+```
+
+## How to study effectively
 
 For each lesson:
 
 1. Read the explanation before the code.
-2. Predict what a code cell should do.
+2. Predict what the next code section should do.
 3. Run it.
 4. Inspect the output.
-5. Change one parameter or value.
+5. Change one value or parameter.
 6. Explain what changed and why.
-7. Complete the practice section before moving on.
+7. Complete the practice section.
 
-For mathematical code, add three more habits:
+For equations:
 
 1. Write the original equation first.
-2. State every symbol and unit.
-3. Test the Python implementation using a case you can verify manually.
-
-A learner who understands **why** a line is present can adapt it to a new experiment. A learner who only copies the line usually cannot.
-
-## Core image-analysis workflow
-
-```mermaid
-flowchart TD
-    A[Define the question] --> B[Load image]
-    B --> C[Inspect shape, dtype, range, channels]
-    C --> D{Need preprocessing?}
-    D -->|No| E[Segment]
-    D -->|Yes| F[Choose a method for a specific problem]
-    F --> G[Compare with original]
-    G --> E
-    E --> H[Validate mask / labels]
-    H --> I{Acceptable?}
-    I -->|No| C
-    I -->|Yes| J[Measure]
-    J --> K[Check units and distributions]
-    K --> L[Save results and parameters]
-```
-
-## Companion guides
-
-- [`FUNCTION_GUIDE.md`](FUNCTION_GUIDE.md) — which image-processing function to try, when, why, and what parameter matters.
-- [`CHEATSHEET.md`](CHEATSHEET.md) — quick syntax reference after you understand the concept.
-- [`REFERENCES.md`](REFERENCES.md) — official documentation used to cross-check the course.
+2. Identify every symbol.
+3. State the units.
+4. Decide the inputs and output.
+5. Write pseudocode if the logic has several steps.
+6. Translate the equation into code.
+7. Test a case you can verify manually.
+8. Check whether the result changes in the physically expected direction.
 
 ## Data policy
 
-The core lessons use built-in `skimage.data` examples and synthetic image data so the repository stays lightweight and reproducible.
+The course uses built-in example images and synthetic data so the repository stays lightweight and reproducible.
 
-When using your own research images:
+When using research images:
 
 - work on copies,
 - keep raw data unchanged,
+- preserve metadata needed for quantitative interpretation,
 - do not commit private or unpublished data to a public repository,
-- preserve metadata needed for quantitative interpretation.
+- save analysis parameters with quantitative results.
 
 ## Scope
 
-The image-processing portion is **beginner-to-practical** and intentionally stops before deep learning, registration, deconvolution, GPU acceleration, and large 3-D/4-D datasets. Those topics become easier once the Python and image-analysis fundamentals here are comfortable.
+This is a **beginner-to-practical** course. It intentionally stops before deep learning, advanced registration, deconvolution, GPU acceleration, and very large 3-D/4-D datasets. Those topics become easier once the programming and image-analysis fundamentals here are comfortable.
 
 ## Author
 
@@ -278,16 +276,20 @@ GitHub: [Mobarak-Karim](https://github.com/Mobarak-Karim)
 
 ## Technical references
 
-The course structure and function usage were cross-checked against current official documentation:
+### Python
 
-1. Python Tutorial — https://docs.python.org/3/tutorial/
-2. NumPy documentation — https://numpy.org/doc/stable/
-3. scikit-image User Guide — https://scikit-image.org/docs/stable/user_guide/
-4. scikit-image NumPy for Images — https://scikit-image.org/docs/stable/user_guide/numpy_images.html
-5. scikit-image Thresholding Guide — https://scikit-image.org/docs/stable/auto_examples/applications/plot_thresholding_guide.html
-6. scikit-image API — https://scikit-image.org/docs/stable/api/skimage
-7. Matplotlib documentation — https://matplotlib.org/stable/
-8. Jupyter — https://jupyter.org/
+- Python Tutorial — https://docs.python.org/3/tutorial/
+- NumPy — https://numpy.org/doc/stable/
+- scikit-image — https://scikit-image.org/docs/stable/
+- Matplotlib — https://matplotlib.org/stable/
+- Jupyter — https://jupyter.org/
+
+### MATLAB
+
+- MATLAB language fundamentals — https://www.mathworks.com/help/matlab/language-fundamentals.html
+- MATLAB matrices and arrays — https://www.mathworks.com/help/matlab/matrices-and-arrays.html
+- MATLAB programming — https://www.mathworks.com/help/matlab/programming-and-data-types.html
+- Image Processing Toolbox — https://www.mathworks.com/help/images/
 
 ## License
 
