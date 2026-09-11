@@ -2,9 +2,9 @@
 
 **Author: Md. Mobarak Karim, Ph.D.**
 
-A beginner-friendly course for learning **Python and image processing together**, from basic programming syntax to a complete image-analysis workflow.
+A beginner-friendly course for learning **Python and image processing together**, from zero programming knowledge to a complete image-analysis workflow.
 
-You do **not** need previous Python experience. The course starts with variables, data types, logic, loops, functions, imports, debugging, and NumPy before moving into image processing.
+You do **not** need previous Python experience. The course begins with programming concepts, scientific problem solving, and translating mathematical equations into code before moving into NumPy and image processing.
 
 The main libraries are **NumPy**, **Matplotlib**, **scikit-image**, **pandas**, and **imageio**.
 
@@ -12,14 +12,23 @@ The main libraries are **NumPy**, **Matplotlib**, **scikit-image**, **pandas**, 
 
 This course is designed around understanding, not copying code.
 
-For each important operation, ask:
+For every important operation, ask:
 
 1. **What problem am I trying to solve?**
-2. **Why is this function appropriate?**
-3. **Which parameter controls its behavior?**
-4. **What should I inspect afterward?**
+2. **What are my inputs and desired output?**
+3. **What equation or logical rule describes the problem?**
+4. **How do I translate that rule into Python?**
+5. **Why is this function appropriate?**
+6. **Which parameter controls its behavior?**
+7. **How will I validate the result?**
 
-The core workflow is:
+The core programming habit is:
+
+```text
+question → concept/equation → inputs/units → pseudocode → Python → test → validate → apply
+```
+
+The core image-analysis workflow is:
 
 ```text
 question → understand data → choose method → inspect result → validate → measure → save
@@ -31,22 +40,38 @@ question → understand data → choose method → inspect result → validate �
 mindmap
   root((Python image processing))
     Python foundations
+      Statements and expressions
       Variables
       Data types
       Strings
-      Lists tuples dictionaries
+      Lists tuples dictionaries sets
+      Indexing and slicing
       Comparisons
       Boolean logic
       if elif else
+      match case
       for loops
       while loops
+      range enumerate zip
       Functions
         Calling functions
-        Parameters
-        Arguments
+        Parameters and arguments
+        Keyword arguments
         return
-      Imports
-      Debugging
+        Scope
+        Docstrings
+      Functions methods attributes
+      Imports and modules
+      File paths
+      Errors and debugging
+    Scientific thinking
+      Define question
+      Define input and output
+      Units
+      Formula to code
+      Pseudocode
+      Test simple cases
+      Validate trends
     NumPy foundations
       Arrays
       Shape
@@ -89,7 +114,7 @@ mindmap
 | Notebook | Topic | What you learn |
 |---|---|---|
 | [`00_setup_and_workflow.ipynb`](00_setup_and_workflow.ipynb) | Setup + workflow | Environment, Jupyter, analysis habits, overall image-processing logic |
-| [`01_python_numpy_for_images.ipynb`](01_python_numpy_for_images.ipynb) | **Python fundamentals + NumPy** | Variables, types, lists, dictionaries, `if/else`, Boolean logic, loops, function calls, writing functions, imports, errors/debugging, arrays, slicing, masks |
+| [`01_python_numpy_for_images.ipynb`](01_python_numpy_for_images.ipynb) | **Complete Python foundation + scientific reasoning + NumPy** | Python from zero, variables, types, collections, logic, conditions, loops, functions, imports, debugging, formula-to-code reasoning, pseudocode, units, NumPy, arrays, slicing, masks, and image-array thinking |
 | [`02_read_display_and_image_types.ipynb`](02_read_display_and_image_types.ipynb) | Read/display/types | Grayscale/RGB, dtype, intensity ranges, safe image I/O |
 | [`03_contrast_histograms_and_intensity.ipynb`](03_contrast_histograms_and_intensity.ipynb) | Histograms + contrast | Intensity distributions, percentiles, display vs data modification |
 | [`04_filtering_noise_and_edges.ipynb`](04_filtering_noise_and_edges.ipynb) | Filtering + edges | Gaussian vs median filtering, noise, Sobel edges, parameter trade-offs |
@@ -100,35 +125,66 @@ mindmap
 | [`09_batch_processing_pipeline.ipynb`](09_batch_processing_pipeline.ipynb) | Batch pipeline | Reusable functions, explicit parameters, multiple images |
 | [`10_final_project.ipynb`](10_final_project.ipynb) | Final project | End-to-end segmentation, validation, measurement, saving results |
 
-## What Notebook 01 now covers
+## Notebook 01 is the standalone Python prerequisite
 
-Notebook `01_python_numpy_for_images.ipynb` is the programming foundation of the course. It now explains:
+[`01_python_numpy_for_images.ipynb`](01_python_numpy_for_images.ipynb) is intentionally much more detailed than the later notebooks. A complete beginner should be able to study it without first leaving this repository for a separate Python course.
 
-- what a variable is,
-- `int`, `float`, `str`, and `bool`,
-- arithmetic and comparison operators,
+It explains:
+
+- what Python statements and expressions are,
+- comments and indentation,
+- variables and meaningful scientific variable names,
+- `int`, `float`, `str`, `bool`, and `None`,
+- type conversion,
+- arithmetic operators and order of operations,
 - strings and f-strings,
-- lists, tuples, and dictionaries,
-- indexing and slicing,
-- `if`, `elif`, `else`,
-- `and`, `or`, `not`,
-- `for` loops,
-- `range()` and `enumerate()`,
-- `while` loops,
+- lists, tuples, dictionaries, and sets,
+- zero-based indexing and slicing,
+- comparison operators,
+- `and`, `or`, and `not`,
+- `if`, `elif`, and `else`,
+- `match / case`,
+- `for` loops and `while` loops,
+- `range()`, `enumerate()`, and `zip()`,
+- `break` and `continue`,
+- list comprehensions,
 - what it means to **call a function**,
-- positional vs keyword arguments,
-- how to define a function with `def`,
+- built-in vs library functions,
+- positional and keyword arguments,
+- how to define a function using `def`,
 - parameters vs arguments,
-- how `return` works,
-- imports and dot notation,
-- common Python errors and debugging,
+- default parameters,
+- `return`,
+- returning multiple values,
+- local variables and scope,
+- docstrings,
+- imports and modules,
+- functions vs methods vs attributes,
+- file paths using `pathlib`,
+- common Python errors,
+- a practical debugging workflow,
+- `try / except`,
+- assertions,
+- how to turn a scientific question into a plain-language algorithm,
+- how to write pseudocode before Python,
+- how to translate an original mathematical formula into code,
+- how to identify formula inputs and outputs,
+- how to preserve parentheses and order of operations,
+- how to keep track of physical units,
+- how to test equations using known/simple cases,
+- how to check whether the output trend is physically reasonable,
+- example formula implementations for circle area, a linear model, exponential attenuation, Euclidean distance, min–max normalization, a Gaussian equation, and pixel-to-physical-area conversion,
 - NumPy arrays,
-- `[row, column]` indexing,
+- array shape and dtype,
+- `[row, column]` image indexing,
+- image cropping,
 - vectorized operations,
-- Boolean image masks,
-- applying all of those ideas to a real image.
+- Boolean masks,
+- array statistics,
+- applying those ideas to an actual image,
+- practice problems and worked solutions.
 
-The notebook has extensive explanatory comments and connects every Python concept to a practical image-processing use.
+The main idea is not merely **how to type Python**, but **how to convert an idea, equation, or experiment into reliable code**.
 
 ## Installation
 
@@ -167,7 +223,13 @@ For each lesson:
 6. Explain what changed and why.
 7. Complete the practice section before moving on.
 
-A learner who understands **why** a line is present will be able to adapt the code to a new image. A learner who only copies the line usually cannot.
+For mathematical code, add three more habits:
+
+1. Write the original equation first.
+2. State every symbol and unit.
+3. Test the Python implementation using a case you can verify manually.
+
+A learner who understands **why** a line is present can adapt it to a new experiment. A learner who only copies the line usually cannot.
 
 ## Core image-analysis workflow
 
@@ -190,7 +252,7 @@ flowchart TD
 
 ## Companion guides
 
-- [`FUNCTION_GUIDE.md`](FUNCTION_GUIDE.md) — which function to try, when, why, and what parameter matters.
+- [`FUNCTION_GUIDE.md`](FUNCTION_GUIDE.md) — which image-processing function to try, when, why, and what parameter matters.
 - [`CHEATSHEET.md`](CHEATSHEET.md) — quick syntax reference after you understand the concept.
 - [`REFERENCES.md`](REFERENCES.md) — official documentation used to cross-check the course.
 
@@ -207,7 +269,7 @@ When using your own research images:
 
 ## Scope
 
-This is a **beginner-to-practical** course. It intentionally stops before deep learning, registration, deconvolution, GPU acceleration, and large 3-D/4-D datasets. Those topics become easier once the fundamentals here are comfortable.
+The image-processing portion is **beginner-to-practical** and intentionally stops before deep learning, registration, deconvolution, GPU acceleration, and large 3-D/4-D datasets. Those topics become easier once the Python and image-analysis fundamentals here are comfortable.
 
 ## Author
 
@@ -218,12 +280,12 @@ GitHub: [Mobarak-Karim](https://github.com/Mobarak-Karim)
 
 The course structure and function usage were cross-checked against current official documentation:
 
-1. scikit-image User Guide — https://scikit-image.org/docs/stable/user_guide/
-2. scikit-image NumPy for Images — https://scikit-image.org/docs/stable/user_guide/numpy_images.html
-3. scikit-image Thresholding Guide — https://scikit-image.org/docs/stable/auto_examples/applications/plot_thresholding_guide.html
-4. scikit-image API — https://scikit-image.org/docs/stable/api/skimage
-5. NumPy documentation — https://numpy.org/doc/stable/
-6. Python tutorial — https://docs.python.org/3/tutorial/
+1. Python Tutorial — https://docs.python.org/3/tutorial/
+2. NumPy documentation — https://numpy.org/doc/stable/
+3. scikit-image User Guide — https://scikit-image.org/docs/stable/user_guide/
+4. scikit-image NumPy for Images — https://scikit-image.org/docs/stable/user_guide/numpy_images.html
+5. scikit-image Thresholding Guide — https://scikit-image.org/docs/stable/auto_examples/applications/plot_thresholding_guide.html
+6. scikit-image API — https://scikit-image.org/docs/stable/api/skimage
 7. Matplotlib documentation — https://matplotlib.org/stable/
 8. Jupyter — https://jupyter.org/
 
