@@ -1,5 +1,5 @@
 %% 01. MATLAB Foundations -> Scientific Thinking -> Images
-% Author: Md. Mobarak Karim, Ph.D.
+% Author: Md. Mobarak Karim
 % Level: Complete beginner
 %
 % Goal:
